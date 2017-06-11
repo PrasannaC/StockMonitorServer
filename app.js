@@ -38,6 +38,10 @@ app.post("/GetData", function(req, res) {
   var key = req.body.key;
 });
 
-app.listen(80, function() {
-  console.log("Listening on port 80");
+app.listen(process.env.PORT || 3000, function() {
+  console.log(
+    "Express server listening on port %d in %s mode",
+    this.address().port,
+    app.settings.env
+  );
 });
