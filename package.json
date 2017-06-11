@@ -4,12 +4,15 @@
   "description": "Stock monitoring app",
   "main": "app.js",
   "scripts": {
-    "start" : "node app.js"
+    "start": "node app.js"
   },
   "author": "PrasannaC",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.17.2",
-    "express": "^4.15.3"
+    "express": "^4.15.3",
+    "firebase-admin": "^5.0.0",
+    "node-schedule": "^1.2.3",
+    "request": "^2.81.0"
   }
 }
