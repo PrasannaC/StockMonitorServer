@@ -7,7 +7,7 @@ var firebase = require("firebase-admin");
 var schedule = require("node-schedule");
 
 setInterval(function() {
-  http.get("http://fitnodeapp.herokuapp.com");
+  http.get("http://stockmonitorserver.herokuapp.com/");
 }, 1740 * 1000);
 
 var certif = {
@@ -65,14 +65,16 @@ app.use(function(req, res, next) {
   next();
 });
 
-var j = schedule.scheduleJob({ hour: 17, minute: 35 }, function() {
-  walk.on("dir", function(dir, stat) {
-    uploadDir.push(dir);
-  });
+var j = schedule.scheduleJob({ hour: 17, minute: 55 }, function() {
+ FetchAndStoreData();
 });
 
 app.get("/", function(req, res) {
   res.send(this.address());
+});
+
+app.get("/FetchData", function(req, res) {
+ FetchAndStoreData();
 });
 
 app.get("/Status", function(req, res) {
