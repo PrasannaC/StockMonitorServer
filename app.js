@@ -65,7 +65,7 @@ app.use(function(req, res, next) {
   next();
 });
 
-var j = schedule.scheduleJob({ hour: 17, minute: 55 }, function() {
+var j = schedule.scheduleJob({ hour: 12, minute: 25 }, function() {
  FetchAndStoreData();
 });
 
